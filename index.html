@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>biFrost - Dual Weather for when youre minds in two place at ones.</title>
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript"> </script>
+
+</head>
+<body>
+
+<section class="container">
+<hr>
+    <div id="infoWrap" class="inline"></div>  
+  
+    <div id="diffWrap" class="inline"> </div>
+    <hr> 
+</section>
+<footer class="container"> <p>code challenge completed by: 
+  <a href="milto:bparonto@gmail.com">Bryan Paronto</a></p>
+</footer>
+
+
+  
+
+<script id="cityTmpl" type="text/x-handlebars-tmpl">
+  
+  <div class="conditions inline">   
+    <div class="wrap">
+       <span class="icon inline">
+          <img  src="http://icons.wxug.com/i/c/i/{{iconPath}}">
+            <span class="city">{{cityName}}</span>
+      </span>
+
+      <div>
+        <h2 class="temp inline">{{currentTemp}}&deg;F</h2>
+      </div>
+  </div>      
+</div>      
+</script>
+
+<script  id="timeDiffTmpl" type="text/x-handlebars-tmpl">
+  <div class="conditions inline">   
+    <div class="wrap">  
+
+        <h4>a temperature difference of: </h4>
+        <h2 class="temp">{{tempDifference}}&deg;F</h2>
+    </div>
+</div>
+
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="//cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+
+</body>
+</html>
