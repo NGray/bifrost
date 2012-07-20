@@ -15,6 +15,7 @@ body {
 .inline {display: inline-block;}
 .temp{margin-left: 30px;}
 hr { color: #999; background: #000; border: 1px dotted #8D8D8D;}
+a {color: #8D8D8D;}
 .conditions{ 
     background: #f5f5f5;
     border-radius: 5px;
