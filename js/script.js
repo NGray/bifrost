@@ -1,7 +1,7 @@
 "use strict";
 
 $(function(){
-var temps = [],
+ var temps = [],
     zipList = [32303, 97201],
     getWeather = function (zipList){
 
@@ -11,7 +11,7 @@ var temps = [],
           // fire off all the ajax requests
           for (var i = 0; i < zipList.length; i++) {
             $.ajax({
-                url: "http://api.wunderground.com/api/625172310aff38a6/geolookup/conditions/q/" + zipList[i] + ".json",
+                url: "http://api.wunderground.com/api/53e0777f09c6de52/geolookup/conditions/q/" + zipList[i] + ".json",
                 dataType: "jsonp",
                 success: function(json) {
 
@@ -20,17 +20,17 @@ var temps = [],
                     currentTemp : json.current_observation.temp_f,
                     iconPath : json.current_observation.icon,
                     temp_diff :  tempDifference
-                  }
+                  };
 
                 // cache the current time on each iteration  
                 temps.push(conditions.currentTemp);
 
                 --counter;
-                if ( counter == 0 )  {
+                if ( counter === 0 )  {
                     // sort temps to grab them in the correct order
                     sortedTemps = temps.sort();
                     tempDifference = sortedTemps[1] - sortedTemps[0];
-                    tempDifference = tempDifference.toPrecision(2)
+                    tempDifference = tempDifference.toPrecision(2);
                    
                     var differenceSource   = $("#timeDiffTmpl").html(),
                       differenceTemplate = Handlebars.compile(differenceSource);
@@ -49,7 +49,6 @@ var temps = [],
        }); // end of $.ajax 
     } // end of for-loop   
   }
-
 
 
 
